@@ -1,0 +1,232 @@
+/* RESET / OSNOVA */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    text-align: center;
+    background: #f7f7f7;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+    color: white;
+    padding: 30px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: 1px;
+}
+
+/* NASLOVI */
+h2 {
+    color: #474646;
+    margin-bottom: 10px;
+}
+
+/* NAVIGACIJA */
+nav {
+    background: linear-gradient(90deg, #ff8c42, #ff6b6b);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+nav h2 {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 12px 18px;
+    text-align: left;
+    user-select: none;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 16px 24px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* TABLICA + ASIDE */
+.table-container {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* TABLICA */
+.table-container table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+thead {
+    background: linear-gradient(90deg, #ff8c42, #ff6b6b);
+    color: white;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    font-size: clamp(12px, 1.1vw, 15px);
+}
+
+th {
+    font-weight: bold;
+    letter-spacing: 0.4px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fcf8f8;
+}
+
+tbody tr:hover {
+    background-color: #fff3ee;
+    transition: background-color 0.25s ease;
+}
+
+/* ASIDE */
+aside {
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+    min-width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dinamic-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* SEKCIJE */
+section,
+article {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    padding: 18px;
+    background: #691c1c;
+    color: white;
+}
+
+/* MOBITEL */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #menu-toggle:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .table-container {
+        display: block;
+        padding: 0 12px;
+    }
+
+    .table-container table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 14px;
+    }
+
+    aside {
+        margin-top: 20px;
+    }
+
+    .dinamic-img {
+        content: url("../images/pearl.jpg");
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    section {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+}
+
+/* VEĆI EKRANI */
+@media (min-width: 769px) {
+    .dinamic-img {
+        content: url("../images/silence_of_the_lambs.jpg");
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+}

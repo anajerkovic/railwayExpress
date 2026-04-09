@@ -1,0 +1,160 @@
+:root {
+    --color-hover: #de7e7e;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --info-background: rgba(0,0,0,0.8);
+}
+
+.content {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.histogram-container {
+    border-radius: 10px;
+    padding: 20px 20px 50px;
+    width: 100%;
+}
+
+.histogram {
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    gap: 6px;
+    height: 320px;
+    align-items: end;
+}
+
+.bar {
+    position: relative;
+    height: var(--h);
+    background-color: #cb5146;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+    transform-origin: bottom;
+    animation: grow-bar 1.2s ease-out forwards;
+    transform: scaleY(0);
+    cursor: pointer;
+}
+
+.bar span {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: var(--text-color);
+}
+
+.bar:hover {
+    z-index: 10;
+    background-color: var(--color-hover);
+    filter: brightness(1.05);
+}
+
+.bar::after {
+    content: attr(data-details);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--info-background);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.bar:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes grow-bar {
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 900px) {
+    .histogram {
+        grid-template-columns: repeat(10, 1fr);
+        height: 260px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .histogram {
+        grid-template-columns: repeat(5, 1fr);
+        height: 220px;
+    }
+
+    .bar::after {
+        white-space: normal;
+        width: 140px;
+    }
+
+    .bar span {
+        font-size: 0.65rem;
+    }
+
+    .legend {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+}
+
+form {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #ff4c4c;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafikon</title>
+    <link rel="stylesheet" href="./styles/style_grafikon.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Dobrodošli na moju web stranicu</h1>
+    </header>
+
+    <nav aria-labelledby="primarna-navigacija">
+        <h2 id="primarna-navigacija">Primarna navigacija</h2>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <ul class="nav-menu">
+            <li><a href="./index.html">Početna</a></li>
+            <li><a href="./slike.html">Slike</a></li>
+            <li><a href="#">Grafikon</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="histogram-container">
+            <h2>Histogram filmova po godinama</h2>
+
+            <div class="histogram">
+                <div class="bar" style="--h:63%;" data-details="A che servono questi quattrini? (1942) – 85 min"><span>1942</span></div>
+                <div class="bar" style="--h:46%;" data-details="Bowery at Midnight (1942) – 62 min"><span>1942</span></div>
+                <div class="bar" style="--h:89%;" data-details="Some Like It Hot (1959) – 120 min"><span>1959</span></div>
+                <div class="bar" style="--h:81%;" data-details="Fail-Safe (1964) – 110 min"><span>1964</span></div>
+                <div class="bar" style="--h:59%;" data-details="A... come assassino (1966) – 80 min"><span>1966</span></div>
+                <div class="bar" style="--h:69%;" data-details="A ciascuno il suo (1967) – 93 min"><span>1967</span></div>
+                <div class="bar" style="--h:75%;" data-details="A Ghentar si muore facile (1968) – 101 min"><span>1968</span></div>
+                <div class="bar" style="--h:78%;" data-details="Mr. Majestyk (1974) – 105 min"><span>1974</span></div>
+                <div class="bar" style="--h:74%;" data-details="A mezzanotte va la ronda del piacere (1975) – 100 min"><span>1975</span></div>
+                <div class="bar" style="--h:67%;" data-details="Ride a Wild Pony (1976) – 91 min"><span>1976</span></div>
+                <div class="bar" style="--h:56%;" data-details="Bugs Bunny's Third Movie (1982) – 76 min"><span>1982</span></div>
+                <div class="bar" style="--h:70%;" data-details="Diner (1982) – 95 min"><span>1982</span></div>
+                <div class="bar" style="--h:73%;" data-details="Warning Sign (1985) – 99 min"><span>1985</span></div>
+                <div class="bar" style="--h:85%;" data-details="At Close Range (1986) – 115 min"><span>1986</span></div>
+                <div class="bar" style="--h:84%;" data-details="About Last Night (1986) – 113 min"><span>1986</span></div>
+                <div class="bar" style="--h:81%;" data-details="Dead-Bang (1989) – 109 min"><span>1989</span></div>
+                <div class="bar" style="--h:71%;" data-details="Sleeping with the Enemy (1990) – 96 min"><span>1990</span></div>
+                <div class="bar" style="--h:82%;" data-details="In Bed With Madonna (1990) – 111 min"><span>1990</span></div>
+                <div class="bar" style="--h:73%;" data-details="18 anni tra una settimana (1991) – 98 min"><span>1991</span></div>
+            </div>
+
+            <div class="legend">
+                <span>Najranija godina: 1942</span>
+                <span>Najkasnija godina: 1991</span>
+            </div>
+        </div>
+
+        
+    </div>
+    <article>
+        <form>
+            <label for="fname">Ime:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Prezime:</label><br>
+            <input type="text" id="lname" name="lname">
+            <button>Pošalji</button>
+        </form>
+    </article>
+    
+
+    <footer role="contentinfo">
+        <p>&copy; 2025. Web Programiranje. Sva prava pridržana.</p>
+    </footer>
+
+</body>
+</html>
