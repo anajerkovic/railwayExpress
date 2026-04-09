@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ana Jerković, Weather">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style_slike.css">
+    <title>Slike</title>
+</head>
+<body>
+    <header>
+        <h1>Dobrodošli na moju web stranicu</h1>
+    </header>
+
+    <nav aria-labelledby="primarna-navigacija">
+        <h2 id="primarna-navigacija">Primarna navigacija</h2>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <ul class="nav-menu">
+            <li><a href="./index.html">Početna</a></li>
+            <li><a href="#">Slike</a></li>
+            <li><a href="./grafikon.html">Grafikon</a></li>
+        </ul>
+    </nav>
+
+    <h1>Galerija slika</h1>
+    <section class="galerija">
+        <% images.forEach((image, index) => { %>
+        <figure class="galerija_slika">
+            <a href="#img<%= index + 1 %>"><img src="<%= image.url %>" alt="<%= image.title %>"></a>
+            <figcaption><%= image.title %></figcaption>
+        </figure>
+        <% }); %>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <% images.forEach((image, index) => { %>
+    <div id="img<%= index + 1 %>" class="lightbox">
+        <a href="#" class="lightbox-bg"></a>
+        <a href="#" class="close">×</a>
+        <img src="<%= image.url.replace('300/200', '900/') %>" alt="<%= image.title %>">
+    </div>
+    <% }); %>
+</body>
+</html>
