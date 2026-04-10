@@ -28,8 +28,10 @@
 
     <h1>Galerija slika</h1>
     <section class="galerija">
+        <!-- Prikaz slika iz JSON datoteke -->
         <% images.forEach((image, index) => { %>
         <figure class="galerija_slika">
+            <!-- Prikaz slike -->
             <a href="#img<%= index + 1 %>"><img src="<%= image.url %>" alt="<%= image.title %>"></a>
             <figcaption><%= image.title %></figcaption>
         </figure>
